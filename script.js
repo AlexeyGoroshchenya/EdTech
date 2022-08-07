@@ -18,6 +18,7 @@ const button = () => {
     document.addEventListener("click", (e) => {
         if (e.target.closest('.question__yes')) {
             console.log('1');
+            document.querySelector('.authorization').style.display = 'block'
         }
 
         if (e.target.closest('.question__no')) {
@@ -104,5 +105,6 @@ const sendForm = (formClass) => {
 
 }
 
+document.querySelector('.authorization').style.display = 'none'
 button()
 sendForm('.authorization')
