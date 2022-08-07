@@ -41,16 +41,26 @@ const sendForm = (formClass) => {
 
     const checkbox = document.querySelector('.authorization__registration>input')
 
+    let url = ''
+
+
+
 
 
     const sendData = (data) => {
-        return fetch('https://jsonplaceholder.typicode.com/posts', {
+        return fetch(url, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
-                "Content-Type": "aplication/json"
+                "Content-Type": "aplication/json",
+                "x-access-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiJiZmVhOWE5MC05YmIwLTQ4ZDctYmQ1Yi02NzYwYzJjMjYyZjkiLCJleHAiOjE2NTk4MDA1MzB9.o5kMZ9MTiKY2nZ_q81SkTo26vS3UoHJjrD_TCkyHtNk"
             }
         }).then(res => res.json())
+            .then(
+                res => {
+                    console.log(res);
+                }
+            )
     }
 
     const submitData = () => {
@@ -58,14 +68,11 @@ const sendForm = (formClass) => {
         const formData = new FormData(form)
         const formBody = {}
 
-        if (!checkbox.checked) {
-            formBody.type = 'authorization'
-        } else { formBody.type = 'registration' }
 
         formData.forEach((val, key) => {
             formBody[key] = val;
         })
-        console.log(formBody);
+
 
 
         sendData(formBody)
@@ -85,6 +92,11 @@ const sendForm = (formClass) => {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
+
+        if (!checkbox.checked) {
+            url = 'http://127.0.0.1:5000/el-doorado/user/login'
+        } else { url = 'http://127.0.0.1:5000/el-doorado/user/register' }
+
         submitData()
 
     })
