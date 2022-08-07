@@ -50,12 +50,12 @@ const sendForm = (formClass) => {
 
     /*const checkbox = document.querySelector('.authorization__registration>input')*/
 
-    let url = '/el-doorado/user/send-file'
+    // 'https://jsonplaceholder.typicode.com/posts'
 
-
+    //http://127.0.0.1:5000/el-doorado/user/file
 
     const sendData = (data) => {
-        return fetch(url, {
+        return fetch('http://127.0.0.1:5000/el-doorado/user/file', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
