@@ -96,11 +96,15 @@ h6 {
 
 
 body {
-  background-color: #464646;
+  background-color: #a1a1a1;
   font-family: 'PT Sans';
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
+}
+
+input {
   color: white;
 }
 
@@ -119,7 +123,7 @@ body {
   margin: 15px;
   padding: 20px;
   border-radius: 5px;
-  background-color: #363636;
+  background-color: #727272;
 }
 
 .question {}
@@ -181,7 +185,8 @@ body {
 }
 
 .authorization__row {
-  display: flex;
+  display: none;
+  /*flex*/
   align-items: center;
   gap: 20px;
   padding-bottom: 20px;
@@ -219,7 +224,8 @@ body {
 }
 
 .authorization__registration {
-  display: flex;
+  display: none;
+  /*flex*/
   align-items: center;
 }
 
