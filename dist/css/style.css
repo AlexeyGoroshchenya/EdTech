@@ -143,11 +143,25 @@ body {
   text-align: center;
   font-size: 24px;
   cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.question__ansver:hover {
+  transform: scale(1.05);
+}
+
+.question__ansver:active {
+  transform: scale(1);
+  background-color: black;
 }
 
 .question__yes {
   flex-basis: 40%;
 }
+
+
+
+.question__yes {}
 
 .question__no {
   flex-basis: 40%;
@@ -193,6 +207,16 @@ body {
   background-color: #222222;
   color: rgb(255, 255, 255);
   font-size: 20px;
+  transition-duration: 0.3s;
+}
+
+.authorization__button:hover {
+  transform: scale(1.05);
+}
+
+.authorization__button:active {
+  transform: scale(1);
+  background-color: black;
 }
 
 .authorization__registration {
