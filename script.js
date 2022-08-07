@@ -30,6 +30,15 @@ const button = () => {
             document.querySelector('.content').style.display = 'block'
             console.log('3');
         }
+
+        if (e.target.closest('.form-content__button')) {
+            document.querySelectorAll('.content__block--second').forEach(item => {
+                item.style.display = 'flex'
+            })
+            console.log('4');
+        }
+
+
     })
 
     document.addEventListener('change', (e) => {
@@ -111,5 +120,11 @@ const sendForm = (formClass) => {
 
 document.querySelector('.authorization').style.display = 'none'
 document.querySelector('.content').style.display = 'none'
+document.querySelectorAll('.content__block--second').forEach(item => {
+    item.style.display = 'none'
+})
+
+
+
 button()
 sendForm('.content__form')

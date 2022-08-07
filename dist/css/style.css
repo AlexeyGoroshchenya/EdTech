@@ -185,6 +185,7 @@ body {
   align-items: center;
   gap: 20px;
   padding-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .authorization__input {
@@ -205,6 +206,7 @@ body {
   color: rgb(255, 255, 255);
   font-size: 20px;
   transition-duration: 0.3s;
+  flex: 1 1 auto;
 }
 
 .authorization__button:hover {
@@ -242,11 +244,23 @@ body {
   padding-bottom: 30px;
 }
 
+.content__block--second {
+  padding-bottom: 10px;
+}
+
+.content__block--second--reverse {
+  flex-direction: row-reverse;
+}
+
 .content__image {
   flex: 0 0 40%;
   width: 40%;
   min-height: 300px;
   position: relative;
+}
+
+.content__block--second .content__image {
+  min-height: 150px;
 }
 
 .content__image img {
@@ -269,6 +283,10 @@ body {
   padding-bottom: 30px;
 }
 
+.text-content__definition {
+  font-size: 20px;
+}
+
 .text-content__item:last-child {
   padding-bottom: 0px;
 }
@@ -284,6 +302,23 @@ body {
 
 .text-content__ansver span {
   padding-left: 15px;
+}
+
+.content__block--second .text-content__ansver {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.content__block--second span {
+  padding-right: 15px;
+}
+
+.content__block--second input[type=text] {
+  height: 30px;
+  background-color: #464646;
+  padding: 0 15px;
+  flex: 1 1 auto;
 }
 
 .content__form {
