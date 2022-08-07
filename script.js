@@ -48,11 +48,9 @@ const sendForm = (formClass) => {
 
     const form = document.querySelector(formClass)
 
-    const checkbox = document.querySelector('.authorization__registration>input')
+    /*const checkbox = document.querySelector('.authorization__registration>input')*/
 
-    let url = ''
-
-
+    let url = '/el-doorado/user/send-file'
 
 
 
@@ -82,14 +80,13 @@ const sendForm = (formClass) => {
             formBody[key] = val;
         })
 
-
-
         sendData(formBody)
             .then(data => {
 
                 formElements.forEach(input => {
                     input.value = ''
                 })
+                console.log('отправлено');
             })
             .catch(error => {
                 console.log(error);
@@ -98,22 +95,21 @@ const sendForm = (formClass) => {
 
     }
 
-    //submit не заработает. нужно вернуть в тип кнопки хтмл сабмит и форме тэг форм
+    //submit авторизации не заработает. нужно вернуть в тип кнопки сабмит и форме тэг форм
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        if (!checkbox.checked) {
-            url = 'http://127.0.0.1:5000/el-doorado/user/login'
-        } else { url = 'http://127.0.0.1:5000/el-doorado/user/register' }
+        /*  if (!checkbox.checked) {
+              url = 'http://127.0.0.1:5000/el-doorado/user/login'
+          } else { url = 'http://127.0.0.1:5000/el-doorado/user/register' }*/
 
         submitData()
 
     })
-
 
 }
 
 document.querySelector('.authorization').style.display = 'none'
 document.querySelector('.content').style.display = 'none'
 button()
-//sendForm('.authorization')
+sendForm('.content__form')

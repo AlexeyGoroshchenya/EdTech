@@ -239,6 +239,7 @@ body {
 
 .content__block {
   display: flex;
+  padding-bottom: 30px;
 }
 
 .content__image {
@@ -284,6 +285,43 @@ body {
 .text-content__ansver span {
   padding-left: 15px;
 }
+
+.content__form {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.form-content {}
+
+.form-content__input {
+  flex: 1 1 auto;
+  height: 30px;
+  background-color: #464646;
+  padding: 0 15px;
+}
+
+.form-content__button {
+  height: 30px;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #222222;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+
+.form-content__button:hover {
+  transform: scale(1.05);
+}
+
+
 
 /*============================================================================*/
 .footer {
