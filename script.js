@@ -25,7 +25,7 @@ const button = () => {
             console.log('2');
         }
 
-        if (e.target.closest('.authorization__button')) {
+        if (e.target.closest('.authorization__button--2')) {
 
             document.querySelector('.content').style.display = 'block'
             console.log('3');
