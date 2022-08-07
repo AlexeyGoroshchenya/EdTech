@@ -24,6 +24,12 @@ const button = () => {
         if (e.target.closest('.question__no')) {
             console.log('2');
         }
+
+        if (e.target.closest('.authorization__button')) {
+
+            document.querySelector('.content').style.display = 'block'
+            console.log('3');
+        }
     })
 
     document.addEventListener('change', (e) => {
@@ -31,6 +37,8 @@ const button = () => {
             toggleRegAuth()
         }
     })
+
+
 
 
 
@@ -90,7 +98,7 @@ const sendForm = (formClass) => {
 
     }
 
-
+    //submit не заработает. нужно вернуть в тип кнопки хтмл сабмит и форме тэг форм
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -106,5 +114,6 @@ const sendForm = (formClass) => {
 }
 
 document.querySelector('.authorization').style.display = 'none'
+document.querySelector('.content').style.display = 'none'
 button()
-sendForm('.authorization')
+//sendForm('.authorization')
